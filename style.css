@@ -73,6 +73,7 @@ body{
     flex-direction: column;
 }
 
+/* DESKTOP */
 @media  screen and (min-width: 500px) {
     /* main */
 
@@ -172,12 +173,13 @@ body{
 
 }
 
-
+/* MOBILE */
 @media  screen and (max-width: 500px) {
     body{
         background-image: url('./images/bg_mobile.jpg');
         background-position-x: right;
         background-repeat: no-repeat;
+        overflow-x: hidden;
     }
 
     .navigation{
