@@ -1,310 +1,85 @@
+body {
+    background-color: black;
+    color: yellow;
 
-
-body{
-    margin: 0;
-    padding: 0;
+}
+.btn{
+    padding: 0.5rem;
+    color: yellow;
+    border-color: yellow;
+    border-width: 2px;
+    border-style: dotted;
 }
 
-
-
-@font-face {
-    font-family: hero;
-    src: url('./fonts/Bulzing-z8BPD.ttf');
+.btn:hover {
+    color: rgb(250, 250, 120);
+    border-color: rgb(250, 250, 120);
+    /* -webkit-box-shadow: 0px 10px 89px 1px rgba(242,255,0,0.84);
+    -moz-box-shadow: 0px 10px 89px 1px rgba(242,255,0,0.84);
+    box-shadow: 0px 10px 89px 1px rgba(242,255,0,0.84); */
 }
 
-@font-face {
-    font-family: main;
-    src: url('./fonts/genshin_font.ttf');
+.shy:hover{
+    -webkit-box-shadow: 0px 10px 89px 1px rgba(242,255,0,0.84);
+    -moz-box-shadow: 0px 10px 89px 1px rgba(242,255,0,0.84);
+    box-shadow: 0px 10px 89px 1px rgba(242,255,0,0.84);
+    transition: 0.3s ease;
 }
 
-
-
-/* utils */
-.center{
-    display: flex;
-    justify-content: center;
-    font-family: 'main';
-}
-
-.blur_type1{
-    /* 1st type */
+input{
+    padding: 0.5rem;
     background-color: transparent;
-    backdrop-filter: blur(20px);
+    color: yellow;
+    border-color: yellow;
+    border-width: 2px;
+    border-style: dotted;
 }
 
-.blur_type2{
-    /* 2nd type */
-    background-color: rgba(255, 255, 255, 0.3 );
-    backdrop-filter: blur(20px);
+hr {
+    border-top: 1px dashed yellow;
 }
 
-.blur_type3{
-    /* 3d type */
-    background-color: transparent;
-    backdrop-filter: blur(8px);
-    background-image: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0.9)
-        rgba(0, 0, 0, 0.9)
-
-    );
+table ,th, td {
+    border-width: 2px;
+    border-color: yellow;
+    border-style: dotted;
 }
 
-/* for all devices */
-.navigation{
-    display: flex;
+.err_container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
     justify-content: center;
-    min-height: 5vh;
-    background-color: rgba(0, 0, 0, 0.342);
-    color: white;
-    font-family:'main';
+    z-index: 10;
 }
 
-.nav_content{
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.error{
+    transition: filter 0.3s ease;
+    width: 300px;
+    height: 150px;
+    padding: 1rem;
+    position: relative;
+    color: red;
+    border-color: red;
+    border-style: dashed;
+    border-width: 2px;
+    margin: auto;
+    margin-top: 20%;
+    
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
-.nav_element{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-/* DESKTOP */
-@media  screen and (min-width: 500px) {
-    /* main */
-
-    body{
-        background-image: url('./images/bg.jpg');
-        background-position-x: right;
-        background-repeat: no-repeat;
-    
-    }
-
-    .content{
-        display: flex;
-        flex-direction: row;
-        min-height: 60vh;
-        user-select: none;
-    }
-
-    .content_int{
-        display: flex;
-        color: #dfc21e;
-
-        
-
-        flex-direction: row;
-        position: fixed;
-        left: 2rem;
-        top: 10rem;
-        z-index: 2;
-    }
-
-
-
-    .hero_text{
-        text-shadow: 5px 5px #181614;
-
-        font-family: 'hero';
-        font-size: 8rem;
-    }
-
-    .hero{
-        position: fixed;
-        /* transition: 0.5s; */
-        right: 2%;
-
-        animation-name: anim1;
-        animation-duration: 2s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-
-    }
-
-
-    /* footer */
-    .footer{
-        display: flex;
-        flex-direction: row;
-        position: fixed;
-        width: 80%;
-        height: auto;
-        padding-bottom: 50px;
-        bottom: -5vh;
-        user-select: none;
-        background-color: rgba(0, 0, 0, 0.342);
-        
-
-        border-radius: 30px;
-        color: #dfc21e;
-
-    }
-
-
-
-    .f_element{
-        display: flex;
-        width: 50%;
-        flex-direction: row-reverse;
-        padding: 2rem;
-        justify-content: space-between;
-        
-    }
-
-
-
-    .f_image{
-        width: 14rem;
-        height: 14rem;
-        object-fit: cover;
-        border-radius: 20px;
-        
-    }
-
-    .footer_text{
-        margin-left: 3rem;
-        text-align: justify;
-    }
-
-
-}
-
-/* MOBILE */
-@media  screen and (max-width: 500px) {
-    body{
-        background-image: url('./images/bg_mobile.jpg');
-        background-position-x: right;
-        background-repeat: no-repeat;
-        overflow-x: hidden;
-    }
-
-    .navigation{
-        display: flex;
-        justify-content: center;
-        min-height: 6vh;
-        background-color: rgba(0, 0, 0, 0.342);
-        color: white;
-        font-family:'main';
-    }
-
-    .content{
-        display: flex;
-        flex-direction: row;
-        min-height: 100vh;
-        user-select: none;
-    }
-    
-    .content_int{
-        display: flex;
-        color: #dfc21e;
-    
-        flex-direction: row;
-        position: absolute;
-        left: 1rem;
-        top: 12rem;
-        z-index: 2;
-    }
-    
-    
-    
-    .hero_text{
-        text-shadow: 5px 5px #181614;
-        max-width: 100vw;
-        font-family: 'hero';
-        font-size: 4rem;
-    }
-    
-    .hero{
-        position: absolute;
-        /* transition: 0.5s; */
-        width: 40rem;
-        right: -50%;
-
-        animation-name: anim2;
-        animation-duration: 2s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-    
-    }
-
-    /* footer */
-    .footer{
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        width: 100vw;
-        height: auto;
-        padding-bottom: 50px;
-        bottom: -5vh;
-        user-select: none;
-        background-color: rgba(0, 0, 0, 0.342);
-        
-        color: #dfc21e;
-
-    }
-
-
-
-    .f_element{
-        display: flex;
-        margin: auto;
-        flex-direction: column-reverse;
-        padding: 2rem;
-        justify-content: space-between;
-        
-    }
-
-    .footer_text{
-        text-align: justify;
-    }
-
-    .f_image{
-        width: 18rem;
-        height: 18rem;
-        object-fit: cover;
-        border-radius: 20px;
-
-        margin: auto;
-        margin-bottom: 1rem;
-        
-    }
-
-
-}
-
-
-@keyframes anim1{
-    0%{
-        top: 10px;
-        /* width: 50rem; */
-        
-    }
-    50%{
-        top: -10px;
-        /* width: 52rem; */
-    }
-    100%{
-        top: 10px;
-        /* width: 50rem; */
-    }
-}
-
-@keyframes anim2{
-    0%{
-        top: 60px;
-        /* width: 50rem; */
-        
-    }
-    50%{
-        top: 30px;
-        /* width: 52rem; */
-    }
-    100%{
-        top: 60px;
-        /* width: 50rem; */
-    }
+.error button {
+    padding: 0.5rem;
+    color: red;
+    border-color: red;
+    border-width: 2px;
+    border-style: dotted;
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
 }
