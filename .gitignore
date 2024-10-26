@@ -1,2 +1,5 @@
-*.py
+server.py
 .env
+cache/
+node_modules/
+artifacts/
