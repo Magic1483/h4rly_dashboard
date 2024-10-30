@@ -1,8 +1,5 @@
 
-/*
-   * @title Tramp Super Star
-   * @dev Tramp Super Star
-*/
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
